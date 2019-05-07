@@ -1,0 +1,24 @@
+{
+ 
+ 
+  " scripts " : {
+    " debug " : " node --inspect = 1337 --debug-brk --nolazy node_modules / cucumber / binumber / cucumber-js --tags @debug --format json: ./ reports / report.json " ,
+    " prueba " : " ./node_modules/.bin/cucumber-js.cmd " ,
+    " test-report " : " ./node_modules/.bin/cucumber-js.cmd --format json: ./ reports / report.json " ,
+    " test-chrome " : " ./node_modules/.bin/cucumber-js.cmd --world-parameters \" { \\\ " browser \\\" : \\\ " chrome \\\" } \ " " ,
+    " test-ie " : " ./node_modules/.bin/cucumber-js.cmd --world-parameters \" { \\\ " browser \\\" : \\\ " ie \\\" } \ " " ,
+    " test-chrome-report " : " ./node_modules/.bin/cucumber-js.cmd --format json: ./ reports / report.json --world-parameters \" { \\\ " browser \\\" : \\\ " chrome \\\" } \ " " ,
+    " test-ie-report " : " ./node_modules/.bin/cucumber-js.cmd --format json: ./ reports / report.json --world-parameters \" { \\\ " browser \\\" : \\\ " ie \\\" } \ " " ,
+   
+  }
+  " dependencias " : {
+    " base64-img " : " ^ 1.0.4 " ,
+    " pepino " : " ^ 5.1.0 " ,
+    " eslint " : " ^ 4.19.1 " ,
+    " npm " : " ^ 6.0.0 " ,
+    " testcafe " : " ^ 1.1.0 "
+  }
+  " devDependencies " : {
+    " eslint-config-google " : " ^ 0.9.1 "
+  }
+}

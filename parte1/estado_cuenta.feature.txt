@@ -1,0 +1,48 @@
+@tag
+Feature: Revisar Estado de cuenta
+  como usuario quiero revisar el estado de cuenta para poder tomar decisiones respecto al manejo de mi cuenta.
+
+
+  @tag2
+  Scenario Outline: Conusultar estado de cuenta
+    Given el usuario está en la página del banco y selecciono consultar estado cuenta
+    When ingreso rut "<rut>" y clave "<clave>"
+    And presiono ingresar
+    And selecciono la opción productos 
+    And selecciono el producto a consultar estado de cuenta
+    And presiono consultar estado 
+    Then el usuario debería generar el estado de cuenta
+
+    Examples: 
+      | rut      | clave |
+      | 23456781 | 1234  | 
+      | 2345678k | 2332  | 
+
+ @tag3
+Scenario Outline: Verificar Información Estado de cuenta
+    Given el usuario está visualizando el estado de cuenta
+    When descargo el pdf del estado de cuenta
+    And verifico nombre del titular 
+    And verifico numero de identificación del produto 
+    And verifico fecha estado 
+    And verifico fecha de vencimiento 
+    And verifico monto minimo pago 
+    And verifico descripción compra o servicio
+    And verifico periodo compra o servicio
+    And verifico nombre establecimiento de la compra o servicio
+    And verifico fecha de la compra o servicio
+    And verifico monto de la compra o servicio
+    And verifico avance otorgado
+    And verifico fecha del avance
+    And verifico monto del avance
+    And verifico tasa de intereses
+    And verifico monto de interes
+    And verifico el periodo en que aplica el interes
+    And verifico concepto otros cargos
+    And verifico monto de otros cargos
+    And verifico pagos efectuados
+    And verifico la fecha en que realizo el pago
+    And verifico el monto pagado
+    And verifico saldo adeudado a la fecha
+    And verifico monto disponible
+    Then los datos son validos y corresponden con los almacenados en la base de datos
